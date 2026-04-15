@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './Hero.css';
+import { assetUrl } from '../utils/assetUrl';
 
 const WA_LINK = "https://wa.me/2349130911276?text=Hi%20I'm%20interested%20in%20your%20products%20from%20Fynest%20Empire";
 
@@ -65,7 +66,7 @@ export default function Hero() {
         <div className="hero-visual" ref={r5}>
           <div className="hero-img-frame">
             <img
-              src="/src/Product-images/bags/DisplayStructuredBagWithWallets.png"
+              src={assetUrl('Product-images/bags/DisplayStructuredBagWithWallets.png')}
               alt="Fynest Empire Collection"
               className="hero-main-img"
               onError={e => {

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './StickyNav.css';
+import { assetUrl } from '../utils/assetUrl';
 
 const WA_LINK = "https://wa.me/2349130911276?text=Hi%20I'm%20interested%20in%20your%20products%20from%20Fynest%20Empire";
 
@@ -45,7 +46,7 @@ export default function StickyNav() {
       <div className="sticky-nav__inner">
         <a href="#home" onClick={e => handleNavClick(e, '#home')} className="sticky-nav__logo">
           <img
-            src="/FynestEmpire Logo.png"
+            src={assetUrl('FynestEmpire Logo.png')}
             alt="Fynest Empire"
             className="sticky-nav__logo-img"
             onError={e => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Products.css';
+import { assetUrl } from '../utils/assetUrl';
 
 const WA_LINK = "https://wa.me/2349130911276?text=Hi%20I'm%20interested%20in%20your%20products%20from%20Fynest%20Empire";
 
@@ -7,33 +8,33 @@ const CATEGORIES = ['All', 'Handbags', 'Slides', 'Perfumes'];
 
 const PRODUCTS = [
   // Handbags
-  { id: 1, name: 'Structured Bag', category: 'Handbags', img: '/src/Product-images/bags/StructuredBag.jpg', tag: 'Bestseller' },
-  { id: 2, name: 'Leather Bag', category: 'Handbags', img: '/src/Product-images/bags/LeatherBag.jpg', tag: null },
-  { id: 3, name: 'Mini YSL Bag', category: 'Handbags', img: '/src/Product-images/bags/Wallet.jpg', tag: 'New' },
-  { id: 4, name: 'Shoulder Bag', category: 'Handbags', img: '/src/Product-images/bags/ShoulderBag.jpg', tag: 'Popular' },
-  { id: 5, name: 'Clutch Bag', category: 'Handbags', img: '/src/Product-images/bags/ClutchBag.jpg', tag: null },
-  { id: 6, name: 'Chic Tote', category: 'Handbags', img: '/src/Product-images/bags/ChicTote1.jpg', tag: 'New' },
-  { id: 7, name: 'Chain Bag', category: 'Handbags', img: '/src/Product-images/bags/ChainBag.jpg', tag: 'Limited'},
-  { id: 8, name: 'Mini Crossbody', category: 'Handbags', img: '/src/Product-images/bags/MiniCrossbody.jpg', tag: null },
-  { id: 9, name: 'Quilted Bag', category: 'Handbags', img: '/src/Product-images/bags/QuiltedBag.jpg', tag: null },
+  { id: 1, name: 'Structured Bag', category: 'Handbags', img: assetUrl('Product-images/bags/StructuredBag.jpg'), tag: 'Bestseller' },
+  { id: 2, name: 'Leather Bag', category: 'Handbags', img: assetUrl('Product-images/bags/LeatherBag.jpg'), tag: null },
+  { id: 3, name: 'Mini YSL Bag', category: 'Handbags', img: assetUrl('Product-images/bags/Wallet.jpg'), tag: 'New' },
+  { id: 4, name: 'Shoulder Bag', category: 'Handbags', img: assetUrl('Product-images/bags/ShoulderBag.jpg'), tag: 'Popular' },
+  { id: 5, name: 'Clutch Bag', category: 'Handbags', img: assetUrl('Product-images/bags/ClutchBag.jpg'), tag: null },
+  { id: 6, name: 'Chic Tote', category: 'Handbags', img: assetUrl('Product-images/bags/ChicTote1.jpg'), tag: 'New' },
+  { id: 7, name: 'Chain Bag', category: 'Handbags', img: assetUrl('Product-images/bags/ChainBag.jpg'), tag: 'Limited'},
+  { id: 8, name: 'Mini Crossbody', category: 'Handbags', img: assetUrl('Product-images/bags/MiniCrossbody.jpg'), tag: null },
+  { id: 9, name: 'Quilted Bag', category: 'Handbags', img: assetUrl('Product-images/bags/QuiltedBag.jpg'), tag: null },
   // Slides
-  { id: 10, name: 'Embellished Slides', category: 'Slides', img: '/src/Product-images/Slides/SlideProduct1.jpg', tag: 'Handcrafted' },
-  { id: 11, name: 'Strap Slides', category: 'Slides', img: '/src/Product-images/Slides/SlideProduct2.jpg', tag: 'New' },
-  { id: 12, name: 'Platform Slides', category: 'Slides', img: '/src/Product-images/Slides/SlideProduct3.jpg', tag: null },
+  { id: 10, name: 'Embellished Slides', category: 'Slides', img: assetUrl('Product-images/Slides/SlideProduct1.jpg'), tag: 'Handcrafted' },
+  { id: 11, name: 'Strap Slides', category: 'Slides', img: assetUrl('Product-images/Slides/SlideProduct2.jpg'), tag: 'New' },
+  { id: 12, name: 'Platform Slides', category: 'Slides', img: assetUrl('Product-images/Slides/SlideProduct3.jpg'), tag: null },
   // Perfumes
-  { id: 13, category: 'Perfumes', img: '/src/Product-images/perfumes/perfumesProduct1.jpg', tag: 'Bestseller' },
-  { id: 14, category: 'Perfumes', img: '/src/Product-images/perfumes/perfumesProduct2.jpg', tag: 'New' },
-  { id: 15, category: 'Perfumes', img: '/src/Product-images/perfumes/perfumesProduct3.jpg', tag: null },
-  { id: 16, category: 'Perfumes', img: '/src/Product-images/perfumes/perfumesProduct4.jpg', tag: 'Popular' },
-  { id: 17, category: 'Perfumes', img: '/src/Product-images/perfumes/perfumesProduct5.jpg', tag: null },
-  { id: 18, category: 'Perfumes', img: '/src/Product-images/perfumes/perfumesProduct6.jpg', tag: null },
+  { id: 13, category: 'Perfumes', img: assetUrl('Product-images/perfumes/perfumesProduct1.jpg'), tag: 'Bestseller' },
+  { id: 14, category: 'Perfumes', img: assetUrl('Product-images/perfumes/perfumesProduct2.jpg'), tag: 'New' },
+  { id: 15, category: 'Perfumes', img: assetUrl('Product-images/perfumes/perfumesProduct3.jpg'), tag: null },
+  { id: 16, category: 'Perfumes', img: assetUrl('Product-images/perfumes/perfumesProduct4.jpg'), tag: 'Popular' },
+  { id: 17, category: 'Perfumes', img: assetUrl('Product-images/perfumes/perfumesProduct5.jpg'), tag: null },
+  { id: 18, category: 'Perfumes', img: assetUrl('Product-images/perfumes/perfumesProduct6.jpg'), tag: null },
 
 ];
 
 const FALLBACKS = {
   Handbags: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80',
   Slides: 'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400&q=80',
-  Perfumes: '/src/Product-images/perfumes/perfumesProduct5.jpg',
+  Perfumes: assetUrl('Product-images/perfumes/perfumesProduct5.jpg'),
 };
 
 export default function Products() {

@@ -1,4 +1,5 @@
 import './About.css';
+import { assetUrl } from '../utils/assetUrl';
 
 const WA_LINK = "https://wa.me/2349130911276?text=Hi%20I'm%20interested%20in%20your%20products%20from%20Fynest%20Empire";
 
@@ -26,14 +27,14 @@ const WHY_POINTS = [
 ];
 
 const GALLERY_IMGS = [
-  '/src/Product-images/bags/StructuredBag.jpg',
-  '/src/Product-images/perfumes/perfumesProduct1.jpg',
-  '/src/Product-images/bags/LeatherBag.jpg',
-  '/src/Product-images/perfumes/perfumesProduct2.jpg',
-  '/src/Product-images/bags/ShoulderBag.jpg',
-  '/src/Product-images/perfumes/perfumesProduct3.jpg',
-  '/src/Product-images/bags/ChicTote1.jpg',
-  '/src/Product-images/perfumes/perfumesProduct4.jpg',
+  assetUrl('Product-images/bags/StructuredBag.jpg'),
+  assetUrl('Product-images/perfumes/perfumesProduct1.jpg'),
+  assetUrl('Product-images/bags/LeatherBag.jpg'),
+  assetUrl('Product-images/perfumes/perfumesProduct2.jpg'),
+  assetUrl('Product-images/bags/ShoulderBag.jpg'),
+  assetUrl('Product-images/perfumes/perfumesProduct3.jpg'),
+  assetUrl('Product-images/bags/ChicTote1.jpg'),
+  assetUrl('Product-images/perfumes/perfumesProduct4.jpg'),
 ];
 
 const FALLBACKS_G = [
@@ -55,13 +56,13 @@ export default function About() {
         <div className="about-img-col">
           <div className="about-img-stack">
             <img
-              src="/src/Product-images/bags/DisplaybagProduct1.jpg"
+              src={assetUrl('Product-images/bags/DisplaybagProduct1.jpg')}
               alt="Fynest Empire"
               className="about-img about-img-main"
               onError={e => { e.target.src = 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80'; }}
             />
             <img
-              src="/src/Product-images/bags/DisplayStructuredBagWithWallets.png"
+              src={assetUrl('Product-images/bags/DisplayStructuredBagWithWallets.png')}
               alt="Fynest Empire Handbags"
               className="about-img about-img-secondary"
               onError={e => { e.target.src = 'https://images.unsplash.com/photo-1588776814546-1ffbb4e8a8f0?w=400&q=80'; }}
