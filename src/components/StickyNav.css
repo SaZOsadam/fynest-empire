@@ -1,0 +1,237 @@
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  padding: 0 60px;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+}
+
+.sticky-nav--scrolled {
+  background: rgba(30, 42, 40, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(201, 162, 74, 0.15);
+  padding: 0 60px;
+}
+
+.sticky-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+/* Logo */
+.sticky-nav__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sticky-nav__logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.sticky-nav__logo-fallback {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.snl-main {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.snl-sub {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+/* Links */
+.sticky-nav__links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.sticky-nav__links a {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  transition: color 0.25s;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.sticky-nav__links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.sticky-nav__links a:hover,
+.sticky-nav__links a.active {
+  color: var(--white);
+}
+
+.sticky-nav__links a.active::after,
+.sticky-nav__links a:hover::after {
+  width: 100%;
+}
+
+/* Right side */
+.sticky-nav__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sticky-nav__cta {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  background: var(--gold);
+  padding: 10px 24px;
+  transition: background 0.25s;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.sticky-nav__cta:hover {
+  background: var(--gold-light);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger span:nth-child(3) {
+  width: 60%;
+  align-self: flex-end;
+}
+
+.hamburger--open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger--open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger--open span:nth-child(3) {
+  width: 100%;
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  background: var(--deep-green-dark);
+  border-top: 1px solid rgba(201, 162, 74, 0.2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.mobile-drawer--open {
+  max-height: 400px;
+}
+
+.mobile-drawer ul {
+  list-style: none;
+  padding: 16px 0 24px;
+}
+
+.mobile-drawer li a {
+  display: block;
+  padding: 14px 24px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+
+.mobile-drawer li a:hover {
+  color: var(--gold);
+  background: rgba(201, 162, 74, 0.06);
+}
+
+.mobile-drawer__cta {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold) !important;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: 8px;
+  padding-top: 22px !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sticky-nav {
+    padding: 0 24px;
+  }
+
+  .sticky-nav--scrolled {
+    padding: 0 24px;
+  }
+
+  .sticky-nav__links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .sticky-nav__cta {
+    display: none;
+  }
+}
